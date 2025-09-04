@@ -1,0 +1,11 @@
+# Handle line endings automatically
+* text=auto
+
+# Force LF for PHP and config files
+*.php text eol=lf
+*.env text eol=lf
+*.md text eol=lf
+
+# Force CRLF only for batch or cmd scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
