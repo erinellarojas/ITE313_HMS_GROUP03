@@ -10,6 +10,7 @@
 - [x] Update session to use role_id
 - [x] Run migrations
 - [x] Run seeders
+- [x] Connect login to migrations and seeders
 - [x] Test login with roles
 - [x] Fix dashboard controller to use role_id
 - [x] Update Home controller to redirect if logged in

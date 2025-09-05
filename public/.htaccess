@@ -9,8 +9,7 @@ Options -Indexes
     RewriteEngine On
 
     # Since your project is directly in htdocs/ITE313_HMS_GROUP03, set RewriteBase
-    RewriteBase /ITE313_HMS_GROUP03/public/
-
+    RewriteBase /ITE313_HMS_GROUP03/
 
     # Redirect trailing slashes
     RewriteCond %{REQUEST_FILENAME} !-d

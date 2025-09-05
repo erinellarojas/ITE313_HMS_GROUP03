@@ -198,3 +198,19 @@ in APPPATH\Views\auth.php\register.php on line 31.
  8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-05 16:21:11 --> mysqli_sql_exception: Duplicate column name 'role_id' in C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp\htdocs\ITE313_HMS_GROUP03\app\Database\Migrations\2025-05-28-000001_AddRoleIdToUsers.php(11): CodeIgniter\Database\Forge->addColumn('users', Array)
+#5 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\MigrationRunner.php(876): App\Database\Migrations\AddRoleIdToUsers->up()
+#6 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\ITE313_HMS_GROUP03\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\ITE313_HMS_GROUP03\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
