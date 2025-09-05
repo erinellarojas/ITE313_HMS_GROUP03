@@ -8,8 +8,9 @@ Options -Indexes
     Options +FollowSymLinks
     RewriteEngine On
 
-    # Since your project is directly in htdocs/hospital_system3, set RewriteBase
-    RewriteBase /hospital_system3/public/
+    # Since your project is directly in htdocs/ITE313_HMS_GROUP03, set RewriteBase
+    RewriteBase /ITE313_HMS_GROUP03/public/
+
 
     # Redirect trailing slashes
     RewriteCond %{REQUEST_FILENAME} !-d

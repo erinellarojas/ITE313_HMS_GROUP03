@@ -9,7 +9,7 @@ class App extends BaseConfig
     /**
      * Base Site URL
      */
-    public string $baseURL = 'http://localhost/hospital_system3/public/'; // Updated to new folder
+    public string $baseURL = 'http://localhost/ITE313_HMS_GROUP03/public/'; // Updated to new folder
 
     /**
      * Allowed Hostnames

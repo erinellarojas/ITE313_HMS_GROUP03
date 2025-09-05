@@ -19,7 +19,7 @@ class Users extends BaseController
         $model->save([
             'username' => $this->request->getPost('username'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'role' => $this->request->getPost('role')
+            'role_id' => $this->request->getPost('role_id')
         ]);
         return redirect()->to('/users');
     }
@@ -35,7 +35,7 @@ class Users extends BaseController
         $model->update($id, [
             'username' => $this->request->getPost('username'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'role' => $this->request->getPost('role')
+            'role_id' => $this->request->getPost('role_id')
         ]);
         return redirect()->to('/users');
     }

@@ -8,7 +8,8 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $this->call('AdminUserSeeder');
+        $this->call('RoleSeeder');
+        $this->call('UserSeeder');
         $this->call('DoctorSeeder');
         $this->call('PatientSeeder');
         $this->call('NurseSeeder');
