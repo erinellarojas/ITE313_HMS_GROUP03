@@ -1,48 +1,50 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\UserModel;
-use CodeIgniter\Controller;
 
-class Auth extends Controller
+class Auth extends BaseController
 {
     public function login()
     {
-        return view('auth/login');
+        // Load the login view
+        return view('auth.php/login');
     }
 
     public function attemptLogin()
     {
         $session = session();
-        $userModel = new UserModel();
+        $model = new UserModel();
 
-        // Sanitize inputs
-        $email = esc($this->request->getPost('email'));
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        $user = $userModel->where('email', $email)->first();
+        $user = $model->where('username', $username)->first();
 
-        if ($user && password_verify($password, $user['password'])) {
-            // Set session
-            $session->set([
-                'user_id'    => $user['id'],
-                'username'   => $user['username'],
-                'role_id'    => $user['role_id'],
-                'role'       => $user['role'] ?? 'user', // optional if you have role name
-                'isLoggedIn' => true
-            ]);
-
-            return redirect()->to('/dashboard');
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $sessionData = [
+                    'user_id' => $user['id'],
+                    'username' => $user['username'],
+                    'role' => $user['role'],
+                    'isLoggedIn' => true,
+                ];
+                $session->set($sessionData);
+                return redirect()->to('/dashboard');
+            } else {
+                $session->setFlashdata('error', 'Invalid password.');
+                return redirect()->to('/login');
+            }
         } else {
-            $session->setFlashdata('error', 'Invalid email or password');
-            return redirect()->back()->withInput(); // preserve input values
+            $session->setFlashdata('error', 'User not found.');
+            return redirect()->to('/login');
         }
     }
 
     public function logout()
     {
-        session()->destroy();
+        $session = session();
+        $session->destroy();
         return redirect()->to('/login');
     }
 }
