@@ -8,7 +8,7 @@ class Dashboard extends BaseController
     {
         $data = [
             'title' => 'Dashboard',
-            'role'  => session()->get('role') // kunin ang role ng naka-login
+            'role'  => session()->get('role') 
         ];
 
         return view('dashboard/index', $data);

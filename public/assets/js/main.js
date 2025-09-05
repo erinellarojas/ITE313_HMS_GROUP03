@@ -1,4 +1,4 @@
-// Wait for DOM to load
+
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
 
